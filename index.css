@@ -1,0 +1,244 @@
+/* stylelint-disable prettier/prettier */
+/* stylelint-disable prettier/prettier */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*=======фон волна=============*/
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: radial-gradient(ellipse at center, #fffeea 0%, #fffeea 35%, #b7e8eb 100%);
+    overflow: hidden;
+}
+
+.ocean {
+    height: 5%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #015871;
+}
+
+.wave {
+    background: url(https://cdn.kcak11.com/codepen_assets/wave_animation/wave.svg) repeat-x;
+    position: absolute;
+    top: -198px;
+    width: 6400px;
+    height: 198px;
+    animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+    transform: translate3d(0, 0, 0);
+}
+
+.wave:nth-of-type(2) {
+    top: -175px;
+    animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite, swell 7s ease -1.25s infinite;
+    opacity: 1;
+}
+
+@keyframes wave {
+    0% {
+        margin-left: 0;
+    }
+    100% {
+        margin-left: -1600px;
+    }
+}
+@keyframes swell {
+    0%,
+    100% {
+        transform: translate3d(0, -25px, 0);
+    }
+    50% {
+        transform: translate3d(0, 5px, 0);
+    }
+}
+.endWave {
+    display: none;
+}
+/*=======фон волна=========FINISH====*/
+
+.container {
+    margin: 0 150px;
+    padding-top: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin: 15px 0;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    padding-top: 20px;
+}
+
+input {
+    display: block;
+    height: 30px;
+    background: none;
+    border-radius: 10px;
+    outline: 0, 5px solid rgb(163, 231, 179);
+}
+
+input:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.btn:active {
+    transform: scale(0.99);
+}
+
+.btn {
+    background: none;
+    border: none;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.add {
+    outline: 1px solid green;
+    margin-bottom: 10px;
+}
+
+.clear {
+    outline: 1px solid red;
+    width: 40vw;
+}
+
+.mainUsers,
+.users {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.users,
+.user {
+    width: 30vw;
+}
+
+.user {
+    margin-bottom: 10px;
+    padding-top: 20px;
+}
+
+.user-outer {
+    display: flex;
+    justify-content: space-between;
+    outline: 1px solid green;
+    border-radius: 10px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.delete,
+.change {
+    border: none;
+    height: 40%;
+    color: white;
+    padding: 0 10px;
+    border-radius: 10px;
+}
+p {
+    padding-left: 10px;
+}
+.delete {
+    background: rgb(230, 161, 161);
+}
+
+.change {
+    background: rgb(152, 234, 152);
+}
+
+.delete:active,
+.change:active {
+    transform: scale(0.95);
+}
+.mainHeading {
+    opacity: 65%;
+}
+
+@media (max-width: 1005px) {
+    .clear {
+        width: 30vw;
+    }
+    form {
+        width: 30vw;
+    }
+    .users,
+    .user {
+        width: 30vw;
+        padding-left: 10px;
+        padding-top: 0px;
+    }
+    .user-outer,
+    .menu {
+        font-size: smaller;
+    }
+    h3 {
+        padding-top: 20px;
+    }
+    p {
+        font-size: 9px;
+        padding-left: 5px;
+    }
+}
+
+@media (max-width: 575px) {
+    .clear {
+        width: 25vw;
+    }
+    form {
+        width: 25vw;
+    }
+    .users,
+    .user {
+        width: 35vw;
+    }
+    .user-outer,
+    .menu {
+        font-size: smaller;
+    }
+    h3 {
+        padding-top: 20px;
+    }
+    .delete,
+    .change {
+        padding-right: 20px;
+        font-size: 0.4em;
+    }
+    p {
+        font-size: 9px;
+        padding-left: 5px;
+    }
+    h1 {
+        font-size: medium;
+    }
+    .menu {
+        padding-right: 4px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+    }
+}
